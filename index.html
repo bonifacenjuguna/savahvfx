@@ -1610,7 +1610,7 @@ async function boot(){
   for(let i=0;i<checks.length;i++){
     await new Promise(r=>setTimeout(r,60));
     const p=Math.round((i+1)/checks.length*100);
-    const bar='█'.repeat(Math.floor(p/5))+'░'.repeat(20-Math.floor(p/5));
+    const bar='█'.repeat(Math.floor(p/5))+''.repeat(20-Math.floor(p/5));
     await row(`<span style="color:var(--td);font-size:11px;display:inline-block;min-width:110px;letter-spacing:1px">${checks[i][0]}</span><span style="color:var(--acc);font-size:11px"> ${bar} </span><span style="color:var(--acc-m);font-size:11px">${checks[i][1]}</span>`,'ln');
   }
   await blank();
